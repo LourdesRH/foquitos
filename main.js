@@ -11,6 +11,7 @@ const recognition = new SpeechRecognition();
 recognition.interimResults = true;
 
 let p = document.createElement('p');
+p.hidden;
 
 recognition.addEventListener('result', (e)=>{
   texts.appendChild(p);
@@ -23,6 +24,8 @@ recognition.addEventListener('result', (e)=>{
 
 
   if(e.results[0].isFinal){
+
+
     if (text.includes('Prende uno') || text.includes('prende uno') || text.includes('prende 1')) {
       p = document.createElement('p');
       p.classList.add('replay');
